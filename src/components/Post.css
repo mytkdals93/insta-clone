@@ -13,6 +13,8 @@
 }
 .post__text{
     font-weight: normal;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
 }
 .post__header{
     display:flex;
@@ -24,4 +26,29 @@
 }
 .post__avatar{
     margin-right: 1rem;
+}
+.post__text{
+    margin: 0px;
+    padding: 20px;
+    padding-bottom:30px;
+}
+.post__commentBox{
+    display: flex;
+}
+.post__comments{
+    padding:10px;
+    padding-top:0px;
+}
+.post__input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-top:1px solid lightgray;
+}
+.post__button{
+    flex:0;
+    border: none;
+    background-color: transparent;
+    border-top:1px solid lightgray;
+    color:#6082a3;
 }
