@@ -3,13 +3,17 @@
 	height: 100vh;
 }
 .app__header{
+
 	padding: 20px;
 	background: white;
 	border-bottom: 1px solid lightgray;
+	display: flex;
+	justify-content: space-between;
 	
 }
 .app__headerImage{
-	width:8rem;
+	max-width: 8em;
+	object-fit: contain;
 }
 .app__signup{
 	align-items: center;

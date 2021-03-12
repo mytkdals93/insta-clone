@@ -1,6 +1,7 @@
 import { Button, makeStyles, Modal, TextField } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import "./App.css";
+import ImageUpload from "./components/ImageUpload";
 import Post from "./components/Post";
 import { auth, db } from "./firebase";
 import logo from "./logo.svg";
@@ -54,7 +55,7 @@ function App() {
 
   useEffect(() => {
     //this is where the code runs
-    db.collection("posts").onSnapshot((snapshot) => {
+    db.collection("posts").orderBy('timestamp','desc').onSnapshot((snapshot) => {
       //every time a new post is addedd, this code fires...
       setPosts(
         snapshot.docs.map((doc) => ({
@@ -139,19 +140,18 @@ function App() {
           </center>
         </div>
       </Modal>
+
       <div className="app__header">
         <img className="app__headerImage" src={logo} alt="" />
-      </div>
-      {user ? (
+        {user ? (
         <>
-        {`hello ${user.displayName}`}
-        <Button
-          onClick={() => {
-            auth.signOut();
-          }}
-        >
-          LOGOUT
-        </Button>
+          <Button
+            onClick={() => {
+              auth.signOut();
+            }}
+          >
+            LOGOUT
+          </Button>
         </>
       ) : (
         <div className="app__loginContainer">
@@ -171,6 +171,7 @@ function App() {
           </Button>
         </div>
       )}
+      </div>
 
       {posts.map(({ id, post }) => (
         <Post
@@ -180,6 +181,11 @@ function App() {
           imageUrl={post.imageUrl}
         />
       ))}
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <h3>Sorry you need to login to uplaod</h3>
+      )}
     </div>
   );
 }
