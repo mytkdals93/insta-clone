@@ -32,7 +32,7 @@ export const Introduction = () => {
             <Typography variant="body1" color="textSecondary" component="p">
               리액트 클론 미니 프로젝트:<br/>
               기능: Authentication, add post, add comment <br/>
-              React + matrial Ui + firebase<br/>
+              React + Material Ui + Firebase<br/>
               찾아주셔서 감사합니다. 
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
