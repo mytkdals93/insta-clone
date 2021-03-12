@@ -111,13 +111,9 @@ function App() {
             <Introduction />
         </div>
       </div>
-      <>
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3>Sorry you need to login to uplaod</h3>
-      )}
-     </>
+      {user? (
+        <ImageUpload user={user} />
+      ) : (<br/>)}
     </div>  
   )
 }

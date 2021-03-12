@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import './Post.css'
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import { db } from '../firebase';
 import firebase from 'firebase';
 
@@ -41,11 +41,11 @@ function Post({user,postId, username, imageUrl,caption}) {
     return (
         <div className="post">
         <div className="post__header">
-        <Avatar 
+        {/* <Avatar 
             className="post__avatar"
             alt='RafehQaizi'
             src="https://picsum.photos/100"
-        />
+        /> */}
         <h3>{username}</h3>
         </div>
         <img className="post__image" src={imageUrl} alt="" srcset=""/>

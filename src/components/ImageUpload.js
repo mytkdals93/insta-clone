@@ -6,7 +6,7 @@ import firebase from "firebase";
 import "./ImageUpload.css";
 
 
-const ImageUpload = ({username}) => {
+const ImageUpload = ({user}) => {
     const [caption, setCaption] = useState(``);
     const [progress, setProgress] = useState(0);
     const [image, setImage] = useState(null);
@@ -46,7 +46,7 @@ const ImageUpload = ({username}) => {
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                         caption: caption,
                         imageUrl: url,
-                        username: username
+                        username: user.displayName
                     });
                     setImage(null);
                     setFileInput("");
